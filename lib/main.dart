@@ -13,6 +13,7 @@ class MadCryptoApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MadCrypto(),
+      theme: ThemeData.dark(),
     );
   }
 }

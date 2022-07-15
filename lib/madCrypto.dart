@@ -77,6 +77,11 @@ class _MadCryptoState extends State<MadCrypto> {
                           fontWeight: FontWeight.bold,
                           fontSize: 40,
                         ),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        3000.65.toStringAsFixed(2),
+                        style: TextStyle(fontSize: 38),
                       )
                     ],
                   )),
