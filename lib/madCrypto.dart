@@ -106,7 +106,7 @@ class _MadCryptoState extends State<MadCrypto> {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        3000.65.toStringAsFixed(2),
+                        '${3000.65.toStringAsFixed(2)}$_selectedCurrency',
                         style: TextStyle(fontSize: 38),
                       )
                     ],
