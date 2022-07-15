@@ -10,9 +10,23 @@ class MadCrypto extends StatefulWidget {
 
 class _MadCryptoState extends State<MadCrypto> {
   String _selectedCrypto = 'BTC';
+  String _selectedCurrency = 'USD';
   List<DropdownMenuItem<String>> cryptoItems() {
     List<DropdownMenuItem<String>> items = [];
     for (var item in cryptoCurrencies) {
+      DropdownMenuItem<String> _item = DropdownMenuItem(
+        child: Text(item),
+        value: item,
+      );
+      items.add(_item);
+    }
+
+    return items;
+  }
+
+  List<DropdownMenuItem<String>> currenciesItems() {
+    List<DropdownMenuItem<String>> items = [];
+    for (var item in currencies) {
       DropdownMenuItem<String> _item = DropdownMenuItem(
         child: Text(item),
         value: item,
@@ -47,6 +61,18 @@ class _MadCryptoState extends State<MadCrypto> {
                         _selectedCrypto = value ?? 'BTC';
                       },
                     );
+                  },
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                DropdownButton<String>(
+                  value: _selectedCurrency,
+                  items: currenciesItems(),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedCurrency = value ?? 'USD';
+                    });
                   },
                 )
               ],
