@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import "package:flutter/material.dart";
+import 'package:madcrypto/appBrain.dart';
 import 'package:madcrypto/constants.dart';
 
 class MadCrypto extends StatefulWidget {
@@ -11,6 +12,21 @@ class MadCrypto extends StatefulWidget {
 class _MadCryptoState extends State<MadCrypto> {
   String _selectedCrypto = 'BTC';
   String _selectedCurrency = 'USD';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    getData();
+  }
+
+  void getData() async {
+    AppBrain brain = AppBrain();
+    String data = await brain.getData(_selectedCrypto, _selectedCurrency);
+    print(String);
+  }
+
   List<DropdownMenuItem<String>> cryptoItems() {
     List<DropdownMenuItem<String>> items = [];
     for (var item in cryptoCurrencies) {
