@@ -69,8 +69,16 @@ class _MadCryptoState extends State<MadCrypto> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Madcrypto'),
-        centerTitle: true,
         elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.light_mode,
+              size: 28,
+            ),
+          )
+        ],
       ),
       body: Column(
         children: [
