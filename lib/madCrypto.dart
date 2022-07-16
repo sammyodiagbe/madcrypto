@@ -33,7 +33,7 @@ class _MadCryptoState extends State<MadCrypto> {
     var rate = jsonDecode(data)['rate'];
     print(rate);
     setState(() {
-      _rate = double.parse(rate);
+      _rate = rate;
       _fetchingData = false;
     });
   }
@@ -88,6 +88,7 @@ class _MadCryptoState extends State<MadCrypto> {
                         _selectedCrypto = value ?? 'BTC';
                       },
                     );
+                    getData();
                   },
                 ),
                 SizedBox(
@@ -100,6 +101,7 @@ class _MadCryptoState extends State<MadCrypto> {
                     setState(() {
                       _selectedCurrency = value ?? 'USD';
                     });
+                    getData();
                   },
                 )
               ],
