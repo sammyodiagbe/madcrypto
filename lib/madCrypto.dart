@@ -24,7 +24,7 @@ class _MadCryptoState extends State<MadCrypto> {
   void getData() async {
     AppBrain brain = AppBrain();
     String data = await brain.getData(_selectedCrypto, _selectedCurrency);
-    print(String);
+    print(data);
   }
 
   List<DropdownMenuItem<String>> cryptoItems() {
