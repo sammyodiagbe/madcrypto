@@ -86,6 +86,7 @@ class _MadCryptoState extends State<MadCrypto> {
                     setState(
                       () {
                         _selectedCrypto = value ?? 'BTC';
+                        _fetchingData = true;
                       },
                     );
                     getData();
@@ -100,7 +101,9 @@ class _MadCryptoState extends State<MadCrypto> {
                   onChanged: (value) {
                     setState(() {
                       _selectedCurrency = value ?? 'USD';
+                      _fetchingData = true;
                     });
+
                     getData();
                   },
                 )
